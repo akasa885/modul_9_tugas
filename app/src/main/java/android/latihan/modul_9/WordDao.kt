@@ -1,10 +1,7 @@
 package android.latihan.modul_9
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface WordDao {
@@ -13,6 +10,9 @@ interface WordDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(word: Word)
+
+    @Delete
+    suspend fun delete(word: Word)
 
     @Query("delete from word_table")
     suspend fun deleteAll()

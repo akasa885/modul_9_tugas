@@ -31,5 +31,9 @@ class WordListAdapter internal constructor(context: Context) : RecyclerView.Adap
         notifyDataSetChanged()
     }
 
+    fun getWordAtPosition(position: Int): Word {
+        return words.get(position)
+    }
+
     override fun getItemCount() = words.size
 }

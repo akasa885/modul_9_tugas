@@ -1,6 +1,7 @@
 package android.latihan.modul_9
 
 import android.content.Context
+import android.os.AsyncTask
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -28,12 +29,13 @@ public abstract class WordRoomDatabase : RoomDatabase() {
             // Delete all content here.
             wordDao.deleteAll()
             // Add sample words.
-            var word = Word("Hello")
+            var word = Word("Text")
             wordDao.insert(word)
-            word = Word("World!")
+            word = Word("Awal")
             wordDao.insert(word)
 // TODO: Add your own words!
-        } }
+        }
+    }
 
     companion object{
         @Volatile
